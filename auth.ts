@@ -17,8 +17,6 @@ export const auth = betterAuth({
   plugins: [
     magicLink({
       sendMagicLink: async ({ email, token, url }, request) => {
-        console.log("sending mail");
-        
         await sendMagicLinkEmail(email, token, url);
       },
     }),
